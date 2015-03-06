@@ -25,15 +25,14 @@ int main(){
         
         printf("%3d! =", n);
         printf_count = 0;
-        for (i=0; i<100; i++) {
-            if (primes_count[i] != 0) {
-                if (printf_count >= 15) {
-                    printf("\n      ");
-                    printf_count = 0;
-                }
-                printf("%3d", primes_count[i]);
-                printf_count++;
+        for (i=0; i<25; i++) {
+            if (primes[i] > n) break;
+            if (printf_count >= 15) {
+                printf("\n      ");
+                printf_count = 0;
             }
+            printf("%3d", primes_count[primes[i]]);
+            printf_count++;
         }
         printf("\n");
         free(primes_count);
